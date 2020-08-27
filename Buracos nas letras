@@ -4,19 +4,12 @@
 using namespace std;
 int main()
 {
-    string frase, comparador = "abdegopqADOPQR";
-    char BE = 'B';
+    string frase, comparador = "abdeopqADOPQR", comparador2 = "Bg";
     getline(cin, frase);
 
     int contador = 0;
     for(int i = 0; i < frase.size(); i++)
     {
-        if(frase.at(i) == BE)
-        {
-            contador += 2;
-        }
-        else
-        {
         for(int j = 0; j < comparador.size(); j++)
         {
             if(frase.at(i) == comparador.at(j))
@@ -24,6 +17,12 @@ int main()
                 contador++;
             }
         }
+        for(int j = 0; j < comparador2.size(); j++)
+        {
+            if(frase.at(i) == comparador2.at(j))
+            {
+                contador+=2;
+            }
         }
     }
     cout << contador;
